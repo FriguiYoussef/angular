@@ -1,0 +1,50 @@
+<div class="page">
+  <h2 class="title">Liste des suggestions</h2>
+
+  <!-- (8) Barre de recherche -->
+  <input
+    class="search"
+    type="text"
+    placeholder="Rechercher une suggestion"
+    [(ngModel)]="searchText"
+  />
+
+  <!-- (6) Affichage liste -->
+  <div class="card" *ngFor="let s of filteredSuggestions">
+
+    <h3 class="card-title">{{ s.title }}</h3>
+
+    <div class="meta">
+      <span class="category">{{ s.category }}</span>
+      <span class="date">{{ s.date | date:'dd MMM yyyy' }}</span>
+    </div>
+
+    <p class="desc">{{ s.description }}</p>
+
+    <!-- Badge statut -->
+    <span *ngIf="s.status === 'acceptee'" class="badge accepted">ACCEPTÉE</span>
+    <span *ngIf="s.status === 'refusee'" class="badge refused">REFUSÉE</span>
+    <span *ngIf="s.status === 'en_attente'" class="badge pending">EN ATTENTE</span>
+
+    <!-- (7) Boutons ne s'affichent pas si refusée -->
+    <div class="actions" *ngIf="s.status !== 'refusee'">
+      <button class="btn like" (click)="likeSuggestion(s)">
+        👍 Like {{ s.nbLikes }}
+      </button>
+
+      <button class="btn fav" (click)="addToFavorites(s)">
+        ♡ Ajouter aux favoris
+      </button>
+    </div>
+    
+  </div>
+  <div class="favorites" *ngIf="favorites.length > 0">
+  <h3>Favoris</h3>
+  <ul>
+    <li *ngFor="let f of favorites">
+      {{ f.title }} - {{ f.category }}
+    </li>
+  </ul>
+</div>
+
+</div>

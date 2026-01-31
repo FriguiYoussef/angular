@@ -1,0 +1,23 @@
+.topbar{
+  height: 46px;
+  background: #243446;
+  color: #fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand{ font-weight: 700; }
+
+.links{ display:flex; gap: 14px; align-items:center; }
+
+.link{ font-size: 12px; color:#e5e7eb; }
+
+.active{
+  background:#2563eb;
+  color:#fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
