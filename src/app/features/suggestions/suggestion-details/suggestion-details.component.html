@@ -1,0 +1,33 @@
+<div class="page">
+  <a class="back" routerLink="/suggestions">← Back to list</a>
+
+  <h2 class="title">Détails de la suggestion</h2>
+
+  <div class="card" *ngIf="suggestion; else notFound">
+    <h3 class="card-title">{{ suggestion.title }}</h3>
+
+    <div class="meta">
+      <span class="category">{{ suggestion.category }}</span>
+      <span class="date">{{ suggestion.date | date:'dd MMM yyyy' }}</span>
+    </div>
+
+    <p class="desc">{{ suggestion.description }}</p>
+
+    <span *ngIf="suggestion.status === 'acceptee'" class="badge accepted">ACCEPTÉE</span>
+    <span *ngIf="suggestion.status === 'refusee'" class="badge refused">REFUSÉE</span>
+    <span *ngIf="suggestion.status === 'en_attente'" class="badge pending">EN ATTENTE</span>
+
+    <div class="details">
+      <div><b>ID :</b> {{ suggestion.id }}</div>
+      <div><b>Likes :</b> {{ suggestion.nbLikes }}</div>
+      <div><b>Statut :</b> {{ suggestion.status }}</div>
+    </div>
+  </div>
+
+  <ng-template #notFound>
+    <div class="card">
+      <h3 class="card-title">Suggestion introuvable</h3>
+      <p class="desc">Aucune suggestion ne correspond à l’ID {{ id }}.</p>
+    </div>
+  </ng-template>
+</div>

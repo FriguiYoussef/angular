@@ -1,0 +1,82 @@
+.page{
+  width: 760px;
+  max-width: calc(100% - 30px);
+  margin: 0 auto;
+  padding: 24px 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.back{
+  display: inline-block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.title{
+  text-align: center;
+  margin: 8px 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.card{
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.card-title{
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.meta{
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.category{
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.date{
+  color: #6b7280;
+}
+
+.desc{
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.badge{
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.accepted{ background: #d1fae5; color: #065f46; }
+.refused{  background: #fee2e2; color: #991b1b; }
+.pending{  background: #ffedd5; color: #9a3412; }
+
+.details{
+  margin-top: 10px;
+  font-size: 12px;
+  color: #111827;
+  display: grid;
+  gap: 6px;
+}
